@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+
+	<!--IOS-->
+	<section if="ios">
+		<ndll name="extension-kochava"/>
+		<!-- <dependency path="frameworks/GameAnalytics.framework"/> -->
+	</section>
+
+	<!--ANDROID-->
+	<section if="android">
+		<android extension="org.haxe.extension.kochava.Kochava"/>
+		<classpath name="src" />
+		<dependency name="extension-kochava" path="dependencies/android/kochava"/>
+	</section>
+
+</project>

@@ -1,0 +1,14 @@
+{
+  "name": "extension-kochava",
+  "url" : "https://github.com/narenjo/extension-kochava/",
+  "license": "MIT",
+  "tags": ["openfl", "kochava", "attribution"],
+  "description": "",
+  "version": "1.0.0",
+  "releasenote": "Developement. Tested against ios, android & javascript targets",
+  "contributors": ["vincent"],
+  "dependencies": {
+    "openfl": "",
+    "lime": ""
+  }
+}
