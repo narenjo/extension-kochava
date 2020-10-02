@@ -38,7 +38,7 @@ public class Kochava extends Extension {
             // Start the Kochava Tracker
             Tracker.configure(new Configuration(mainContext)
                     .setAppGuid(info.metaData.getString("org.haxe.extension.kochava.ApplicationId"))
-                    //.setLogLevel(Tracker.LOG_LEVEL_DEBUG)
+                    //.setLogLevel(Tracker.LOG_LEVEL_TRACE)
             );
         }
     }

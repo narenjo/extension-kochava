@@ -75,14 +75,21 @@ class Kochava {
     public static final PARAM_USER_NAME = "user_name";
     public static final PARAM_VALIDATED = "validated";
 
-    public static function sendEvent(eventType:Int, eventName:String, params:Map<String, String>):Void {
-        #if android
-        var fn = JNI.createStaticMethod("org/haxe/extension/kochava/Kochava", "sendEvent", "(ILjava/lang/String;Ljava/lang/String;)V");
+    public static function sendEvent(eventType:Int, params:Map<String, String>):Void {
+        #if !android
+        trace("Not implemented");
+        return;
+        #else
+
+        var fn = null;
+        fn = JNI.createStaticMethod("org/haxe/extension/kochava/Kochava", "sendEvent", "(ILjava/lang/String;)V");
+
+
         var dyn = {};
 		for (k in params.keys()) {
 			Reflect.setField(dyn, k, params.get(k));
-		}
-        fn(eventType, eventName, Json.stringify(dyn));
+        }
+        fn(eventType, Json.stringify(dyn));
         #end
     }
 }
